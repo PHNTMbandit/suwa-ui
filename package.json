@@ -2,8 +2,8 @@
   "name": "strata-ui-react",
   "version": "0.1.9",
   "type": "module",
-  "main": "./dist/strata-ui-react.cjs.js",
-  "module": "./dist/strata-ui-react.es.js",
+  "main": "./dist/strata-ui-react.umd.cjs",
+  "module": "./dist/strata-ui-react.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
@@ -11,24 +11,21 @@
     "build:css": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css --minify",
     "lint": "eslint .",
     "preview": "vite preview",
-    "release:patch": "pnpm build && pnpm version patch && git push && pnpm publish",
-    "release:minor": "pnpm build && pnpm version minor && git push && pnpm publish",
-    "release:major": "pnpm build && pnpm version major && git push && pnpm publish"
+    "release:patch": "pnpm run build && pnpm version patch && git push && pnpm publish",
+    "release:minor": "pnpm run build && pnpm version minor && git push && pnpm publish",
+    "release:major": "pnpm run build && pnpm version major && git push && pnpm publish"
   },
   "exports": {
     ".": {
-      "import": "./dist/strata-ui-react.es.js",
-      "require": "./dist/strata-ui-react.cjs.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/strata-ui-react.js",
+      "require": "./dist/strata-ui-react.umd.cjs"
     },
-    "./style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/style.css"
   },
   "files": [
     "dist"
   ],
-  "sideEffects": [
-    "./dist/style.css"
-  ],
+  "sideEffects": false,
   "dependencies": {
     "@base-ui/react": "^1.0.0",
     "@phosphor-icons/react": "^2.1.10",

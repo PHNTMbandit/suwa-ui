@@ -3,7 +3,6 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import { resolve } from "node:path";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -14,28 +13,23 @@ export default defineConfig({
       },
     }),
     dts({
-      tsconfigPath: "./tsconfig.app.json",
-      entryRoot: "src",
-      outDir: "dist",
       insertTypesEntry: true,
-      rollupTypes: true,
     }),
     tailwindcss(),
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: "src/index.ts",
       name: "strata-ui-react",
-      fileName: (format) => `strata-ui-react.${format}.js`,
-      formats: ["es", "cjs"],
+      fileName: "strata-ui-react",
     },
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM",
-          "react/jsx-runtime": "jsxRuntime",
+          "react-dom": "reactDOM",
+          "react/jsx-runtime": "react/jsx-runtime",
         },
       },
     },

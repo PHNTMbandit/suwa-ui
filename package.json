@@ -2,7 +2,7 @@
   "name": "strata-ui-react",
   "description": "A set of accessible, customizable, and production-ready React components built with Tailwind CSS.",
   "private": false,
-  "version": "0.1.13",
+  "version": "0.1.14",
   "type": "module",
   "main": "./dist/strata-ui-react.cjs.js",
   "module": "./dist/strata-ui-react.es.js",

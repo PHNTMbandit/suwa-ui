@@ -25,13 +25,6 @@
   "sideEffects": [
     "./dist/style.css"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PHNTMbandit/strata-ui-react.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
     "@phosphor-icons/react": "^2.1.10",

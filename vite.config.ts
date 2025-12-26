@@ -14,6 +14,7 @@ export default defineConfig({
       },
     }),
     dts({
+      tsconfigPath: "./tsconfig.app.json",
       entryRoot: "src",
       outDir: "dist",
       insertTypesEntry: true,
@@ -24,8 +25,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
-      name: "orbis-ui-react",
-      fileName: (format) => `orbis-ui-react.${format}.js`,
+      name: "strata-ui-react",
+      fileName: (format) => `strata-ui-react.${format}.js`,
       formats: ["es", "cjs", "umd"],
     },
     rollupOptions: {

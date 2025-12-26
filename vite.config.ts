@@ -26,14 +26,22 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: [resolve(__dirname, "src/index.ts")],
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "strata-ui-react",
       formats: ["es", "cjs"],
+      fileName: (format) => `index.${format === "es" ? "js" : "cjs"}`,
     },
+    cssCodeSplit: false,
+    sourcemap: true,
     emptyOutDir: true,
-    minify: false,
     rollupOptions: {
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
-        preserveModules: true,
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "react/jsx-runtime": "jsxRuntime",
+        },
       },
     },
   },

@@ -1,6 +1,6 @@
 {
   "name": "strata-ui-react",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "module": "./dist/strata-ui-react.js",
   "types": "./dist/index.d.ts",

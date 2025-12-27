@@ -1,31 +1,26 @@
-import { useStore } from "@tanstack/react-form";
-import { useFormContext, type FormErrorsProps } from "./form.types";
-import { cn } from "@/utils/cn";
+import { useStore } from "@tanstack/react-form"
+import { cn } from "@/utils/cn"
+import { type FormErrorsProps, useFormContext } from "./form.types"
 
 export const FormErrors = ({
-  className,
-  children,
-  ref,
-  ...props
+	className,
+	children,
+	ref,
+	...props
 }: FormErrorsProps) => {
-  const form = useFormContext();
-  const formErrors = useStore(form.store, (formState) => formState.errors);
+	const form = useFormContext()
+	const formErrors = useStore(form.store, (formState) => formState.errors)
 
-  return (
-    <div
-      className={cn("", className)}
-      ref={ref}
-      {...props}>
-      {children}
-      <div className="mt-2">
-        {formErrors.map((error, index) => (
-          <p
-            key={index}
-            className="text-error text-sm">
-            {error.message}
-          </p>
-        ))}
-      </div>
-    </div>
-  );
-};
+	return (
+		<div className={cn("", className)} ref={ref} {...props}>
+			{children}
+			<div className="mt-2">
+				{formErrors.map((error) => (
+					<p className="text-error text-sm" key={error.message}>
+						{error.message}
+					</p>
+				))}
+			</div>
+		</div>
+	)
+}

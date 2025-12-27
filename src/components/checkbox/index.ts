@@ -1,6 +1,6 @@
-export { Checkbox } from "./checkbox";
-export { CheckboxIndicator } from "./checkbox-indicator";
+export { Checkbox } from "./checkbox"
 export type {
-  CheckboxRootProps,
-  CheckboxIndicatorProps,
-} from "./checkbox.types";
+	CheckboxIndicatorProps,
+	CheckboxRootProps,
+} from "./checkbox.types"
+export { CheckboxIndicator } from "./checkbox-indicator"

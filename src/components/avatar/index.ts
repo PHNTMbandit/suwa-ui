@@ -1,8 +1,8 @@
-export { Avatar } from "./avatar";
-export { AvatarImage } from "./avatar-image";
-export { AvatarFallback } from "./avatar-fallback";
+export { Avatar } from "./avatar"
 export type {
-  AvatarProps,
-  AvatarImageProps,
-  AvatarFallbackProps,
-} from "./avatar.types";
+	AvatarFallbackProps,
+	AvatarImageProps,
+	AvatarProps,
+} from "./avatar.types"
+export { AvatarFallback } from "./avatar-fallback"
+export { AvatarImage } from "./avatar-image"

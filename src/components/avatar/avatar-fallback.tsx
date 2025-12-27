@@ -1,18 +1,18 @@
-import { cn } from "@/utils/cn";
-import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
-import type { AvatarFallbackProps } from "./avatar.types";
+import { Avatar as BaseAvatar } from "@base-ui/react/avatar"
+import { cn } from "@/utils/cn"
+import type { AvatarFallbackProps } from "./avatar.types"
 
 export const AvatarFallback = ({
-  className,
-  ref,
-  ...props
+	className,
+	ref,
+	...props
 }: AvatarFallbackProps) => {
-  return (
-    <BaseAvatar.Fallback
-      data-slot="avatar-fallback"
-      className={cn("flex size-full items-center justify-center", className)}
-      ref={ref}
-      {...props}
-    />
-  );
-};
+	return (
+		<BaseAvatar.Fallback
+			className={cn("flex size-full items-center justify-center", className)}
+			data-slot="avatar-fallback"
+			ref={ref}
+			{...props}
+		/>
+	)
+}

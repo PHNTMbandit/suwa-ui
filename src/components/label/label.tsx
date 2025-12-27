@@ -1,14 +1,16 @@
-import { cn } from "@/utils/cn";
-import type { LabelProps } from "./label.types";
+/** biome-ignore-all lint/a11y/noLabelWithoutControl: Just because */
+import { cn } from "@/utils/cn"
+import type { LabelProps } from "./label.types"
 
 export const Label = ({ className, children, ref, ...props }: LabelProps) => {
-  return (
-    <label
-      data-slot="label"
-      className={cn("hover:cursor-pointer", className)}
-      ref={ref}
-      {...props}>
-      {children}
-    </label>
-  );
-};
+	return (
+		<label
+			className={cn("hover:cursor-pointer", className)}
+			data-slot="label"
+			ref={ref}
+			{...props}
+		>
+			{children}
+		</label>
+	)
+}

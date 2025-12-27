@@ -1,14 +1,14 @@
-import { createFormHookContexts } from "@tanstack/react-form";
-import type { InputProps } from "../input";
-import type { ButtonExtendedProps } from "../button";
-import type { ComponentProps } from "react";
+import { createFormHookContexts } from "@tanstack/react-form"
+import type { ComponentProps } from "react"
+import type { ButtonExtendedProps } from "../button"
+import type { InputProps } from "../input"
 
 export const { fieldContext, useFieldContext, formContext, useFormContext } =
-  createFormHookContexts();
+	createFormHookContexts()
 
-export type FieldInputProps = InputProps;
-export type FieldErrorsProps = ComponentProps<"div">;
-export type FormErrorsProps = ComponentProps<"div">;
+export type FieldInputProps = InputProps
+export type FieldErrorsProps = ComponentProps<"div">
+export type FormErrorsProps = ComponentProps<"div">
 export type FieldSubmitButtonProps = ButtonExtendedProps & {
-  submittingText?: string;
-};
+	submittingText?: string
+}

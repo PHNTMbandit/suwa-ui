@@ -8,8 +8,6 @@
 		"url": "https://github.com/PHNTMbandit/strata-ui-react"
 	},
 	"types": "./dist/index.d.ts",
-	"main": "./dist/strata-ui-react.cjs",
-	"module": "./dist/strata-ui-react.es.js",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

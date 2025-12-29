@@ -25,8 +25,10 @@ export default defineConfig({
 		}),
 		dts({
 			tsconfigPath: "./tsconfig.app.json",
+			entryRoot: "src",
 			exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
 			insertTypesEntry: true,
+			rollupTypes: true,
 			outDir: "dist",
 		}),
 	],
@@ -35,7 +37,7 @@ export default defineConfig({
 			entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
 			name: "strata-ui-react",
 			fileName: (format) => `strata-ui-react.${format}.js`,
-			formats: ["es"],
+			formats: ["es", "umd"],
 		},
 		rollupOptions: {
 			external: Object.keys(peerDependencies),

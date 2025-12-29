@@ -25,6 +25,8 @@ export default defineConfig({
 		}),
 		dts({
 			exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
+			insertTypesEntry: true,
+			outDir: "./dist",
 		}),
 	],
 	build: {

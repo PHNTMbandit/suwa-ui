@@ -1,30 +1,30 @@
-import { TabsOrientationContext, type TabsListProps } from "./tabs.types";
-import { Tabs as SwitchTabs } from "@base-ui/react/tabs";
-import { cn } from "@/utils/cn";
-import { useContext } from "react";
+import { Tabs as SwitchTabs } from "@base-ui/react/tabs"
+import { useContext } from "react"
+import { cn } from "@/utils/cn"
+import { type TabsListProps, TabsOrientationContext } from "./tabs.types"
 
 export const TabsList = ({ className, ...props }: TabsListProps) => {
-  const orientation = useContext(TabsOrientationContext);
+	const orientation = useContext(TabsOrientationContext)
 
-  if (orientation === "horizontal") {
-    return (
-      <SwitchTabs.List
-        className={cn(
-          "relative z-0 flex flex-col h-fit grow gap-2 p-2 bg-surface-neutral-primary-default rounded-3xl",
-          className
-        )}
-        {...props}
-      />
-    );
-  }
+	if (orientation === "horizontal") {
+		return (
+			<SwitchTabs.List
+				className={cn(
+					"relative z-0 flex h-fit grow flex-col gap-2 rounded-3xl bg-surface-neutral-primary-default p-2",
+					className,
+				)}
+				{...props}
+			/>
+		)
+	}
 
-  return (
-    <SwitchTabs.List
-      className={cn(
-        "relative z-0 flex gap-1 p-2 bg-surface-neutral-primary-default rounded-full",
-        className
-      )}
-      {...props}
-    />
-  );
-};
+	return (
+		<SwitchTabs.List
+			className={cn(
+				"relative z-0 flex gap-1 rounded-full bg-surface-neutral-primary-default p-2",
+				className,
+			)}
+			{...props}
+		/>
+	)
+}

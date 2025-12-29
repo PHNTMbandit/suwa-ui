@@ -1,15 +1,14 @@
-export { SliderHandle } from "./slider-handle";
-export { SliderSegment } from "./slider-segment";
-export { SliderTickLabel } from "./slider-tick-label";
-export { SliderTick } from "./slider-tick";
-export { SliderTrack } from "./slider-track";
-export { Slider } from "./slider";
-
+export { Slider } from "./slider"
 export type {
-  SliderHandleProps,
-  SliderSegmentProps,
-  SliderTickLabelProps,
-  SliderTickProps,
-  SliderTrackProps,
-  SliderProps,
-} from "./slider.types";
+	SliderHandleProps,
+	SliderProps,
+	SliderSegmentProps,
+	SliderTickLabelProps,
+	SliderTickProps,
+	SliderTrackProps,
+} from "./slider.types"
+export { SliderHandle } from "./slider-handle"
+export { SliderSegment } from "./slider-segment"
+export { SliderTick } from "./slider-tick"
+export { SliderTickLabel } from "./slider-tick-label"
+export { SliderTrack } from "./slider-track"

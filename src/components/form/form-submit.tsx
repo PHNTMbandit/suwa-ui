@@ -1,29 +1,30 @@
-import { cn } from "@/utils/cn";
-import { Button } from "../button";
-import { useFormContext, type FieldSubmitButtonProps } from "./form.types";
+/** biome-ignore-all lint/correctness/noChildrenProp: Just because */
+import { cn } from "@/utils/cn"
+import { Button } from "../button"
+import { type FieldSubmitButtonProps, useFormContext } from "./form.types"
 
 export const FormSubmit = ({
-  submittingText = "Submitting...",
-  className,
-  children,
-  ref,
-  ...props
+	submittingText = "Submitting...",
+	className,
+	children,
+	ref,
+	...props
 }: FieldSubmitButtonProps) => {
-  const form = useFormContext();
+	const form = useFormContext()
 
-  return (
-    <form.Subscribe
-      selector={(state) => [state.canSubmit, state.isSubmitting]}
-      children={([canSubmit, isSubmitting]) => (
-        <Button
-          type="submit"
-          disabled={!canSubmit || isSubmitting}
-          className={cn("w-full", className)}
-          ref={ref}
-          {...props}>
-          {isSubmitting ? submittingText : children}
-        </Button>
-      )}
-    />
-  );
-};
+	return (
+		<form.Subscribe
+			children={(state) => (
+				<Button
+					className={cn("w-full", className)}
+					disabled={!state.canSubmit || state.isSubmitting}
+					ref={ref}
+					type="submit"
+					{...props}
+				>
+					{state.isSubmitting ? submittingText : children}
+				</Button>
+			)}
+		/>
+	)
+}

@@ -1,10 +1,10 @@
-import { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox";
-import type { ComponentProps, ReactNode } from "react";
+import type { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox"
+import type { ComponentProps, ReactNode } from "react"
 
 export type CheckboxRootProps = ComponentProps<typeof BaseCheckbox.Root> & {
-  label?: ReactNode;
-};
+	label?: ReactNode
+}
 
 export type CheckboxIndicatorProps = ComponentProps<
-  typeof BaseCheckbox.Indicator
->;
+	typeof BaseCheckbox.Indicator
+>

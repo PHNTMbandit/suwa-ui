@@ -7,7 +7,7 @@
 		"defaultBranch": "main"
 	},
 	"files": {
-		"includes": ["**", "!!**/dist", "!**/*.css"]
+		"includes": ["**", "!!**/dist"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -36,12 +36,6 @@
 		}
 	},
 	"css": {
-		"linter": {
-			"enabled": false
-		},
-		"formatter": {
-			"enabled": false
-		},
 		"parser": {
 			"tailwindDirectives": true
 		}

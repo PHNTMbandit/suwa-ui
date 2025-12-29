@@ -2,6 +2,7 @@
 
 import path from "node:path"
 import { fileURLToPath } from "node:url"
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs"
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin"
 import react from "@vitejs/plugin-react"
 import { playwright } from "@vitest/browser-playwright"
@@ -31,6 +32,7 @@ export default defineConfig({
 			rollupTypes: true,
 			outDir: "dist",
 		}),
+		viteCommonjs(),
 	],
 	build: {
 		lib: {
@@ -39,12 +41,11 @@ export default defineConfig({
 			formats: ["es"],
 		},
 		rollupOptions: {
-			external: Object.keys(peerDependencies),
+			external: ["react", "react-dom", ...Object.keys(peerDependencies)],
 			output: {
 				globals: {
 					react: "React",
 					"react-dom": "ReactDOM",
-					"react/jsx-runtime": "jsxRuntime",
 				},
 			},
 		},

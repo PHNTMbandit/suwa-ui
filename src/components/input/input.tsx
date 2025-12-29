@@ -15,7 +15,7 @@ export const Input = ({
 		<div
 			aria-disabled={props.disabled}
 			className={cn(
-				"flex items-center gap-xs px-md w-full py-sm group h-xl inset-shadow-2-shadow inset-shadow-sm bg-surface-dim rounded-xl data-[disabled=true]:opacity-50 data-[disabled=true]:cursor-not-allowed data-[disabled=true]:hover:outline-transparent outline-2 outline-transparent hover:not-focus-within:outline-outline focus-within:outline-primary focus-within:caret-primary transition-all",
+				"group inset-shadow-2-shadow inset-shadow-sm flex h-xl w-full items-center gap-xs rounded-xl bg-surface-dim px-md py-sm outline-2 outline-transparent transition-all focus-within:caret-primary focus-within:outline-primary hover:not-focus-within:outline-outline data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50 data-[disabled=true]:hover:outline-transparent",
 				className,
 			)}
 			data-disabled={props.disabled}
@@ -24,7 +24,7 @@ export const Input = ({
 				<>
 					<div
 						className={cn(
-							"flex items-center text-on-surface-variant justify-center [&>svg]:size-s group-focus-within:text-primary transition-all",
+							"flex items-center justify-center text-on-surface-variant transition-all group-focus-within:text-primary [&>svg]:size-s",
 						)}
 					>
 						{createElement(leadingIcon, {
@@ -41,9 +41,9 @@ export const Input = ({
 			)}
 			<BaseInput
 				className={cn(
-					"outline-none w-full",
+					"w-full outline-none",
 					"placeholder:opacity-60",
-					"disabled:text-text-neutral-primary-disabled disabled:cursor-not-allowed",
+					"disabled:cursor-not-allowed disabled:text-text-neutral-primary-disabled",
 					"overflow-ellipsis",
 				)}
 				ref={ref}

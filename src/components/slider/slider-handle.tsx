@@ -28,7 +28,7 @@ export const SliderHandle = ({
 						aria-valuemin={sliderInstance.options.min}
 						aria-valuenow={value}
 						className={cn(
-							"absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none border-2 border-primary bg-surface-container hover:cursor-pointer active:border-secondary hover:border-secondary transition-[width,height,border] aspect-square",
+							"absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-primary bg-surface-container outline-none transition-[width,height,border] hover:cursor-pointer hover:border-secondary active:border-secondary",
 							isActive ? "size-md shadow-4-shadow" : "size-sm shadow-1-shadow",
 							className,
 						)}

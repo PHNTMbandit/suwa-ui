@@ -17,17 +17,17 @@ export const ToastProvider = ({
 				<BaseToast.Viewport
 					className={cn(
 						{
-							"fixed z-10 top-[1rem] left-[1rem] right-auto bottom-auto mx-0 flex w-1/4":
+							"fixed top-[1rem] right-auto bottom-auto left-[1rem] z-10 mx-0 flex w-1/4":
 								position === "top-left",
-							"fixed z-10 top-[1rem] left-1/2 right-auto bottom-auto mx-auto flex w-1/4 -translate-x-1/2":
+							"fixed top-[1rem] right-auto bottom-auto left-1/2 z-10 mx-auto flex w-1/4 -translate-x-1/2":
 								position === "top-center",
-							"fixed z-10 top-[1rem] right-[1rem] left-auto bottom-auto mx-0 flex w-1/4":
+							"fixed top-[1rem] right-[1rem] bottom-auto left-auto z-10 mx-0 flex w-1/4":
 								position === "top-right",
-							"fixed z-10 bottom-[6rem] left-[1rem] right-auto top-auto mx-0 flex w-1/4":
+							"fixed top-auto right-auto bottom-[6rem] left-[1rem] z-10 mx-0 flex w-1/4":
 								position === "bottom-left",
-							"fixed z-10 bottom-[6rem] left-1/2 right-auto top-auto mx-auto flex w-1/4 -translate-x-1/2":
+							"fixed top-auto right-auto bottom-[6rem] left-1/2 z-10 mx-auto flex w-1/4 -translate-x-1/2":
 								position === "bottom-center",
-							"fixed z-10 bottom-[6rem] right-[1rem] left-auto top-auto mx-0 flex w-1/4":
+							"fixed top-auto right-[1rem] bottom-[6rem] left-auto z-10 mx-0 flex w-1/4":
 								position === "bottom-right",
 						},
 						className,

@@ -8,7 +8,7 @@ export const Switch = ({ label, className, ref, ...props }: SwitchProps) => {
 		<div className="flex items-center gap-xs">
 			<BaseSwitch.Root
 				className={cn(
-					"relative group transition-colors flex items-center h-[26px] w-[50px] rounded-full bg-surface-dim bg-size-[6.5rem_100%] inset-shadow-1-shadow p-0.5 ease-[cubic-bezier(0.26,0.75,0.38,0.45)] before:absolute before:rounded-full data-checked:bg-accent data-checked:active:bg-gray-500 outline-2 outline-transparent not-disabled:hover:outline-accent hover:cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
+					"group relative inset-shadow-1-shadow flex h-[26px] w-[50px] items-center rounded-full bg-size-[6.5rem_100%] bg-surface-dim p-0.5 outline-2 outline-transparent transition-colors ease-[cubic-bezier(0.26,0.75,0.38,0.45)] before:absolute before:rounded-full hover:cursor-pointer not-disabled:hover:outline-accent disabled:pointer-events-none disabled:opacity-50 data-checked:bg-accent data-checked:active:bg-gray-500",
 					className,
 				)}
 				ref={ref}
@@ -16,7 +16,7 @@ export const Switch = ({ label, className, ref, ...props }: SwitchProps) => {
 			>
 				<BaseSwitch.Thumb
 					className={
-						"size-[14px] data-checked:size-[18px] rounded-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] translate-x-[6px] shadow-xs data-checked:translate-x-[26px] data-checked:scale-[1.1] data-unchecked:bg-accent data-checked:bg-on-accent"
+						"size-[14px] translate-x-[6px] rounded-full bg-accent shadow-xs transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] data-checked:size-[18px] data-checked:translate-x-[26px] data-checked:scale-[1.1] data-checked:bg-on-accent data-unchecked:bg-accent"
 					}
 				/>
 			</BaseSwitch.Root>

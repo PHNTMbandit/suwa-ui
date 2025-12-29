@@ -16,7 +16,7 @@ export const Checkbox = ({
 		<div className="flex items-center gap-2">
 			<BaseCheckbox.Root
 				className={cn(
-					"flex size-md items-center text-on-accent justify-center rounded-sm bg-surface-dim inset-shadow-1-shadow data-checked:bg-accent data-checked:raised-1 hover:cursor-pointer transition-colors hover:disabled:cursor-not-allowed",
+					"data-checked:raised-1 inset-shadow-1-shadow flex size-md items-center justify-center rounded-sm bg-surface-dim text-on-accent transition-colors hover:cursor-pointer hover:disabled:cursor-not-allowed data-checked:bg-accent",
 					className,
 				)}
 				disabled={disabled}
@@ -32,7 +32,7 @@ export const Checkbox = ({
 				<label
 					className={cn(
 						"body-base cursor-pointer",
-						disabled && "text-text-neutral-primary-disabled cursor-not-allowed",
+						disabled && "cursor-not-allowed text-text-neutral-primary-disabled",
 					)}
 					htmlFor={id}
 				>

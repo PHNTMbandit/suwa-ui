@@ -46,7 +46,7 @@ export const Slider = ({
 			{label && (
 				<p className="style-text-default--1 text-on-surface-variant">{label}</p>
 			)}
-			<div className="flex items-center w-full gap-sm">
+			<div className="flex w-full items-center gap-sm">
 				{LeadingIcon && <LeadingIcon className="size-sm" weight="bold" />}
 				<SliderTrack sliderRef={sliderRef}>
 					{showTickLabels &&

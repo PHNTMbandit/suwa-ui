@@ -6,7 +6,7 @@ export const Avatar = ({ className, children, ref, ...props }: AvatarProps) => {
 	return (
 		<BaseAvatar.Root
 			className={cn(
-				"inline-flex size-xl items-center justify-center overflow-hidden rounded-full bg-surface-container align-middle font-medium select-none raised-2",
+				"raised-2 inline-flex size-xl select-none items-center justify-center overflow-hidden rounded-full bg-surface-container align-middle font-medium",
 				className,
 			)}
 			data-slot="avatar"

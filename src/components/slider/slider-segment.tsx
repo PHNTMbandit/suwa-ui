@@ -16,7 +16,7 @@ export const SliderSegment = ({
 	return (
 		<div
 			className={cn(
-				"absolute bg-primary h-full rounded-full inset-shadow-1-shadow",
+				"absolute inset-shadow-1-shadow h-full rounded-full bg-primary",
 				className,
 			)}
 			ref={ref}

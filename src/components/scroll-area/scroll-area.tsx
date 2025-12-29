@@ -21,22 +21,22 @@ export const ScrollArea = ({
 		>
 			<BaseScrollArea.Viewport
 				className={
-					"h-full overscroll-contain flex flex-col gap-xs py-2xs pr-sm pl-sm prose-step-0"
+					"prose-step-0 flex h-full flex-col gap-xs overscroll-contain py-2xs pr-sm pl-sm"
 				}
 			>
 				{children}
 			</BaseScrollArea.Viewport>
 			<BaseScrollArea.Scrollbar
 				className={cn(
-					"inset-shadow-1-shadow flex justify-center rounded p-[2px] bg-surface-dim opacity-0 transition-opacity delay-300 data-hovering:opacity-100 data-hovering:delay-0 data-hovering:duration-75 data-scrolling:opacity-100 data-scrolling:delay-0 data-scrolling:duration-75 hover:cursor-pointer",
-					orientation === "vertical" && "w-2xs mr-2xs my-2xs",
-					orientation === "horizontal" && "h-2xs flex-col mb-2xs mx-xs",
+					"inset-shadow-1-shadow flex justify-center rounded bg-surface-dim p-[2px] opacity-0 transition-opacity delay-300 hover:cursor-pointer data-hovering:opacity-100 data-scrolling:opacity-100 data-hovering:delay-0 data-scrolling:delay-0 data-hovering:duration-75 data-scrolling:duration-75",
+					orientation === "vertical" && "my-2xs mr-2xs w-2xs",
+					orientation === "horizontal" && "mx-xs mb-2xs h-2xs flex-col",
 					className,
 				)}
 				orientation={orientation}
 			>
 				<BaseScrollArea.Thumb
-					className={"w-full h-full rounded-full bg-accent rounded-1"}
+					className={"h-full w-full rounded-1 rounded-full bg-accent"}
 				/>
 			</BaseScrollArea.Scrollbar>
 			<BaseScrollArea.Corner />

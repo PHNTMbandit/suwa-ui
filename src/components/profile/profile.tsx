@@ -26,7 +26,7 @@ export const Profile = ({
 			</Avatar>
 			<div
 				className={cn(
-					"flex flex-col justify-start items-start",
+					"flex flex-col items-start justify-start",
 					compact && "hidden",
 				)}
 			>

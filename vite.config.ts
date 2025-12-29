@@ -1,14 +1,12 @@
 /// <reference types="vitest/config" />
 
-// https://vite.dev/config/
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin"
-import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { playwright } from "@vitest/browser-playwright"
-import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
+import { defineConfig } from "vitest/config"
 import { peerDependencies } from "./package.json"
 
 const dirname =
@@ -16,6 +14,7 @@ const dirname =
 		? __dirname
 		: path.dirname(fileURLToPath(import.meta.url))
 
+// https://vite.dev/config/
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
 	plugins: [
@@ -27,7 +26,6 @@ export default defineConfig({
 		dts({
 			exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
 		}),
-		tailwindcss(),
 	],
 	build: {
 		lib: {
@@ -47,7 +45,9 @@ export default defineConfig({
 		},
 	},
 	test: {
+		globals: true,
 		environment: "jsdom",
+		css: true,
 		projects: [
 			{
 				extends: true,

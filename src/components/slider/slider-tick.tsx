@@ -17,7 +17,7 @@ export const SliderTick = ({
 			{...props}
 			style={{ left: `${percentage}%` }}
 		>
-			<span className="absolute bg-on-surface-variant rounded-full left-0 h-2xs w-[2px] -translate-x-1/2 translate-y-[0.7rem]" />
+			<span className="absolute left-0 h-2xs w-[2px] -translate-x-1/2 translate-y-[0.7rem] rounded-full bg-on-surface-variant" />
 			{children}
 		</div>
 	)

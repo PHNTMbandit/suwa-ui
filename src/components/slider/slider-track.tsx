@@ -12,7 +12,7 @@ export const SliderTrack = ({
 	return (
 		<div
 			className={cn(
-				"relative h-2xs inset-shadow-1-shadow rounded-full bg-surface-dim grow",
+				"relative inset-shadow-1-shadow h-2xs grow rounded-full bg-surface-dim",
 				className,
 			)}
 			ref={sliderRef}

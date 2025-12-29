@@ -14,18 +14,17 @@ export const FormSubmit = ({
 
 	return (
 		<form.Subscribe
-			children={([canSubmit, isSubmitting]) => (
+			children={(state) => (
 				<Button
 					className={cn("w-full", className)}
-					disabled={!canSubmit || isSubmitting}
+					disabled={!state.canSubmit || state.isSubmitting}
 					ref={ref}
 					type="submit"
 					{...props}
 				>
-					{isSubmitting ? submittingText : children}
+					{state.isSubmitting ? submittingText : children}
 				</Button>
 			)}
-			selector={(state) => [state.canSubmit, state.isSubmitting]}
 		/>
 	)
 }

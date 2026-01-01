@@ -7,7 +7,7 @@ export const buttonVariants = cva(
 	{
 		variants: {
 			tone: {
-				destructive: "",
+				error: "",
 				glass: "",
 				neutral: "",
 				primary: "",
@@ -390,73 +390,73 @@ export const buttonVariants = cva(
 				size: ["large", "iconLarge"],
 				className: "hover:raised-4 active:inset-shadow-3-shadow",
 			},
-			// Destructive variants
+			// error variants
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "solid",
 				className: "bg-error text-on-error",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "solid",
 				size: ["small", "iconSmall"],
 				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "solid",
 				size: ["medium", "iconMedium"],
 				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "solid",
 				size: ["large", "iconLarge"],
 				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "outline",
 				className:
 					"border-error text-error hover:text-on-error-container hover:bg-error-container active:bg-transparent",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "outline",
 				size: ["small", "iconSmall"],
 				className: "border-1",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "outline",
 				size: ["medium", "iconMedium"],
 				className: "border-2",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "outline",
 				size: ["large", "iconLarge"],
 				className: "border-4",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "ghost",
 				className: "text-error hover:surface-bright active:bg-surface-dim",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "ghost",
 				size: ["small", "iconSmall"],
 				className: "hover:raised-1 active:inset-shadow-1-shadow",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "ghost",
 				size: ["medium", "iconMedium"],
 				className: "hover:raised-2 active:inset-shadow-2-shadow",
 			},
 			{
-				tone: "destructive",
+				tone: "error",
 				style: "ghost",
 				size: ["large", "iconLarge"],
 				className: "hover:raised-4 active:inset-shadow-3-shadow",

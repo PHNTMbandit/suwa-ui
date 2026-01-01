@@ -3,6 +3,7 @@
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin"
+import tailwindCss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { playwright } from "@vitest/browser-playwright"
 import dts from "vite-plugin-dts"
@@ -21,12 +22,11 @@ export default defineConfig({
 		react(),
 		dts({
 			tsconfigPath: "./tsconfig.app.json",
-			entryRoot: "src",
 			exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
 			insertTypesEntry: true,
 			rollupTypes: true,
-			outDir: "dist",
 		}),
+		tailwindCss(),
 	],
 	build: {
 		lib: {

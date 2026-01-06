@@ -60,6 +60,7 @@ export default defineConfig({
 		globals: true,
 		environment: "jsdom",
 		css: true,
+		passWithNoTests: true,
 		projects: [
 			{
 				extends: true,

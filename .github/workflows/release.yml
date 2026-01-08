@@ -2,17 +2,6 @@ name: Release to NPM
 
 on:
   workflow_dispatch:
-    inputs:
-      target_branch:
-        description: "Select the development cycle for the release"
-        required: true
-        default: "main"
-        type: choice
-        options:
-          - main
-          - alpha
-          - beta
-          - rc
 
   push:
     branches:
@@ -53,14 +42,16 @@ jobs:
     runs-on: ubuntu-latest
 
     if: |
-      github.event_name == 'push' ||
-      github.ref_name == inputs.target_branch
+      github.ref_name == 'main' ||
+      github.ref_name == 'alpha' ||
+      github.ref_name == 'beta' ||
+      github.ref_name == 'rc'
 
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          ref: ${{ inputs.target_branch || github.ref_name }}
+          ref: ${{ github.ref_name }}
 
       - uses: pnpm/action-setup@v4
         with:
@@ -81,5 +72,4 @@ jobs:
 
       - run: pnpm exec semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

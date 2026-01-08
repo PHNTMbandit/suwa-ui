@@ -1,5 +1,19 @@
 module.exports = {
-	branches: ["main"],
+	branches: [
+		"main",
+		{
+			name: "alpha",
+			prerelease: true,
+		},
+		{
+			name: "beta",
+			prerelease: true,
+		},
+		{
+			name: "rc",
+			prerelease: true,
+		},
+	],
 	plugins: [
 		"@semantic-release/commit-analyzer",
 		"@semantic-release/release-notes-generator",
@@ -14,6 +28,15 @@ module.exports = {
 			{
 				pkgRoot: ".",
 				npmPublish: true,
+			},
+		],
+		[
+			"@semantic-release/git",
+			{
+				assets: ["CHANGELOG.md", "package.json"],
+				message:
+					// biome-ignore lint/suspicious/noTemplateCurlyInString: Semantic release placeholder
+					"chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
 			},
 		],
 		[

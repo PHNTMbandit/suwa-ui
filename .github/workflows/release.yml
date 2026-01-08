@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+      - alpha
+      - beta
+      - rc
 
 permissions:
   contents: write
@@ -12,6 +15,26 @@ permissions:
   id-token: write
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v6
+        - name: Install pnpm
+          uses: pnpm/action-setup@v4
+          with:
+              version: 10
+        - name: Use Node.js
+          uses: actions/setup-node@v6
+          with:
+              node-version: 24
+              cache: "pnpm"
+        - name: Install dependencies
+          run: pnpm install
+        - name: Run tests
+          run: pnpm test
+        - name: Build project
+          run: pnpm build
+
   release:
     runs-on: ubuntu-latest
 

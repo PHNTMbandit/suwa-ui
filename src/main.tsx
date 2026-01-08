@@ -1,13 +1,16 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { App } from "./App"
 import { ToastProvider } from "./components"
 import "./styles.css"
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-	<React.StrictMode>
-		<ToastProvider position="bottom-right">
-			<App />
-		</ToastProvider>
-	</React.StrictMode>,
-)
+const rootElement = document.getElementById("root")
+
+if (rootElement) {
+	ReactDOM.createRoot(rootElement).render(
+		<React.StrictMode>
+			<ToastProvider position="bottom-right">
+				<main></main>
+			</ToastProvider>
+		</React.StrictMode>,
+	)
+}

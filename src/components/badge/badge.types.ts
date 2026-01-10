@@ -3,24 +3,26 @@ import { cva } from "class-variance-authority"
 import type { ComponentProps } from "react"
 
 export const badgeVariants = cva(
-	"inline-flex items-center justify-center whitespace-nowrap select-none transition-all px-xs py-3xs gap-3xs style-text-default--2",
+	"inline-flex items-center justify-center whitespace-nowrap select-none transition-all px-2xs h-md gap-3xs style-text-default--2",
 	{
 		variants: {
 			tone: {
 				primary: "",
 				secondary: "",
-				tertiary: "",
+				accent: "",
 				neutral: "",
+				neutralVariant: "",
+				inverse: "",
 				error: "",
 				success: "",
 				warning: "",
 			},
 			style: {
 				solid: "inset-shadow-raised-xs shadow-xs",
-				outline: "bg-transparent outline outline-2",
+				outline: "bg-transparent outline",
 			},
 			radius: {
-				rounded: "rounded-lg",
+				rounded: "rounded-md",
 				circle: "rounded-full",
 			},
 		},
@@ -55,14 +57,14 @@ export const badgeVariants = cva(
 			},
 
 			{
-				tone: "tertiary",
+				tone: "accent",
 				style: "solid",
-				className: "bg-tertiary text-on-tertiary",
+				className: "bg-accent text-on-accent",
 			},
 			{
-				tone: "tertiary",
+				tone: "accent",
 				style: "outline",
-				className: "outline-tertiary text-tertiary",
+				className: "outline-accent text-accent",
 			},
 
 			// Neutral tone
@@ -75,6 +77,21 @@ export const badgeVariants = cva(
 				tone: "neutral",
 				style: "outline",
 				className: "outline-on-surface text-on-surface",
+			},
+			{
+				tone: "neutralVariant",
+				style: "solid",
+				className: "bg-on-surface-variant text-surface",
+			},
+			{
+				tone: "neutralVariant",
+				style: "outline",
+				className: "outline-on-surface-variant text-on-surface-variant",
+			},
+			{
+				tone: "inverse",
+				style: "outline",
+				className: "outline-on-surface-variant text-on-surface-variant",
 			},
 
 			// error tone

@@ -1,3 +1,14 @@
+# [1.0.0-beta.4](https://github.com/PHNTMbandit/suwa-ui/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-01-17)
+
+
+### Features
+
+* add accordion ui components ([a827f1f](https://github.com/PHNTMbandit/suwa-ui/commit/a827f1f486c345355edd14c58225c055c1f55bb6))
+* add navigation menu ui component ([062d759](https://github.com/PHNTMbandit/suwa-ui/commit/062d759dc7f400e114f4b85cb9b44fa2265250ac))
+* add sidebar ui component ([e06704d](https://github.com/PHNTMbandit/suwa-ui/commit/e06704d65295ae740d2342704b44dee1caccbbfa))
+* **input:** add suffix to inputs ([512ae7c](https://github.com/PHNTMbandit/suwa-ui/commit/512ae7cc1e849a1bfa2e2f275b437cac862493bd))
+* **sidebar:** support mobile ([e1ea914](https://github.com/PHNTMbandit/suwa-ui/commit/e1ea9141e64f84991082ca304d4bcd2b6a1b52b0))
+
 # [1.0.0-beta.3](https://github.com/PHNTMbandit/suwa-ui/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2026-01-08)
 
 

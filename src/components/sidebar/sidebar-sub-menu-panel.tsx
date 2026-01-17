@@ -1,6 +1,8 @@
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible"
 import { cn } from "@/utils/cn"
+import { PopoverPanel } from "../popover"
 import type { SidebarSubMenuPanelProps } from "./sidebar.types"
+import { useSidebar } from "./sidebar-provider"
 
 export const SidebarSubMenuPanel = ({
 	className,
@@ -8,6 +10,12 @@ export const SidebarSubMenuPanel = ({
 	ref,
 	...props
 }: SidebarSubMenuPanelProps) => {
+	const { open } = useSidebar()
+
+	if (!open) {
+		return <PopoverPanel side="right">{children}</PopoverPanel>
+	}
+
 	return (
 		<BaseCollapsible.Panel
 			className={cn(

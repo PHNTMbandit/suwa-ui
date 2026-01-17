@@ -17,7 +17,8 @@ export const SidebarGroupLabel = ({
 	return (
 		<span
 			className={cn(
-				"style-text-default--2 pl-sm text-on-surface-variant uppercase",
+				"style-text-default--2 slide-in-from-left-2 fade-in-0 fade-in truncate pl-sm text-on-surface-variant uppercase transition-all duration-200 ease-out",
+				open && "animate-in",
 				className,
 			)}
 			ref={ref}

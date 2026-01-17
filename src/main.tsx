@@ -74,13 +74,12 @@ if (rootElement) {
 							<SidebarGroup>
 								<SidebarGroupContent>
 									<SidebarMenu>
-										<SidebarToggle />
 										<SidebarMenuLink
 											data-active={_items[0].active ? "" : undefined}
 											label={_items[0].title}
 											leadingIcon={_items[0].icon}
 										>
-											<Badge>4</Badge>
+											<Badge style="outline">4</Badge>
 										</SidebarMenuLink>
 									</SidebarMenu>
 								</SidebarGroupContent>
@@ -119,6 +118,7 @@ if (rootElement) {
 						</SidebarContent>
 						<SidebarFooter>Footer content</SidebarFooter>
 					</Sidebar>
+					<SidebarToggle />
 					<div className="grow">Content goes here</div>
 				</SidebarProvider>
 			</main>

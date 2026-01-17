@@ -13,14 +13,21 @@ export const SidebarFooter = ({
 	return (
 		<div
 			className={cn(
-				"",
+				"truncate transition-all duration-300 ease-in-out",
 				open ? "px-xl pb-xl" : "max-w-2xl overflow-hidden p-sm",
 				className,
 			)}
 			ref={ref}
 			{...props}
 		>
-			{children}
+			<div
+				className={cn(
+					"animate-in duration-150 ease-in",
+					open ? "fade-in-0" : "fade-out-0",
+				)}
+			>
+				{children}
+			</div>
 		</div>
 	)
 }

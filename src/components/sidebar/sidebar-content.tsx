@@ -13,10 +13,10 @@ export const SidebarContent = ({
 	return (
 		<div
 			className={cn(
-				"flex grow flex-col overflow-y-auto",
+				"flex grow flex-col overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out",
 				open
 					? "gap-xl pr-sm pl-lg"
-					: "gap-xs divide-y divide-outline-variant pl-sm",
+					: "gap-xs divide-y divide-outline-variant pr-0 pl-sm",
 				className,
 			)}
 			ref={ref}

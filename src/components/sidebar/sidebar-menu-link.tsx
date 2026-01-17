@@ -40,7 +40,7 @@ export const SidebarMenuLink = ({
 				{open && (
 					<span
 						className={cn(
-							"style-text-default-0",
+							"style-text-default-0 slide-in-from-left-2 fade-in-0 animate-in transition-all duration-200 ease-out",
 							size === "compact" && "hidden",
 						)}
 					>

@@ -3,9 +3,11 @@ import { cn } from "@/utils/cn"
 
 type SidebarContextProps = React.ComponentProps<"div"> & {
 	defaultOpen?: boolean
+	trigger?: () => void
 	open?: boolean
 	setOpen?: (open: boolean) => void
-	trigger?: () => void
+	isMobile?: boolean
+	setIsMobile?: (isMobile: boolean) => void
 	side?: "left" | "right"
 }
 
@@ -20,16 +22,40 @@ export const SidebarProvider = ({
 	...props
 }: SidebarContextProps) => {
 	const [open, setOpen] = React.useState<boolean>(defaultOpen)
+	const [isMobile, setIsMobile] = React.useState<boolean>(false)
 
 	const trigger = () => setOpen(!open)
 
+	React.useEffect(() => {
+		const checkIsMobile = () => {
+			const mobile = window.innerWidth < 1024
+			setIsMobile(mobile)
+			if (mobile && defaultOpen) {
+				setOpen(false)
+			}
+		}
+
+		checkIsMobile()
+		window.addEventListener("resize", checkIsMobile)
+
+		return () => window.removeEventListener("resize", checkIsMobile)
+	}, [defaultOpen])
+
 	return (
 		<SidebarContext.Provider
-			value={{ defaultOpen, open, setOpen, side, trigger }}
+			value={{
+				defaultOpen,
+				open,
+				setOpen,
+				side,
+				trigger,
+				isMobile,
+				setIsMobile,
+			}}
 		>
 			<div
 				className={cn(
-					"h-full w-full",
+					"relative h-full w-full",
 					side === "left" ? "flex flex-row" : "flex flex-row-reverse",
 					className,
 				)}

@@ -11,6 +11,14 @@ export const SidebarToggle = ({
 	...props
 }: SidebarToggleProps) => {
 	const { trigger } = useSidebar()
+
+	const handleClick = (e: React.MouseEvent) => {
+		e.stopPropagation()
+		if (trigger) {
+			trigger()
+		}
+	}
+
 	return (
 		<Button
 			className={cn("", className)}
@@ -18,7 +26,7 @@ export const SidebarToggle = ({
 			size={"iconMedium"}
 			style="ghost"
 			{...props}
-			onClick={trigger}
+			onClick={handleClick}
 		>
 			{children}
 			<SidebarSimpleIcon weight="bold" />
